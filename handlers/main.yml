@@ -1,0 +1,7 @@
+---
+- name: restarted nginx service
+  become: true
+  ansible.builtin.service:
+    name: nginx
+    state: restarted
+  when: not ansible_check_mode
